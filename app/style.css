@@ -1,0 +1,279 @@
+/* DealHound: a dark deal-hunting board with amber accents. System fonts
+   only, no webfont, no images: every visual is CSS. */
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background: #0f172a;
+  color: #e2e8f0;
+  line-height: 1.5;
+}
+
+a { color: #fbbf24; }
+
+header {
+  background: #111827;
+  border-bottom: 3px solid #f59e0b;
+  padding: 28px 20px 20px;
+  text-align: center;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 40px;
+  letter-spacing: -1px;
+  color: #fff;
+}
+
+header h1 span { color: #f59e0b; }
+
+header p { margin: 6px 0 0; color: #94a3b8; font-size: 17px; }
+
+header .checked-line {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 4px 12px;
+  border: 1px solid #f59e0b;
+  border-radius: 999px;
+  color: #fde68a;
+  font-size: 13px;
+}
+
+main { max-width: 1160px; margin: 0 auto; padding: 0 16px 40px; }
+
+.controls {
+  background: #1e293b;
+  border: 1px solid #334155;
+  border-radius: 12px;
+  padding: 14px;
+  margin: 18px 0 10px;
+}
+
+.controls input[type="search"],
+.controls select {
+  background: #0f172a;
+  color: #e2e8f0;
+  border: 1px solid #475569;
+  border-radius: 8px;
+  padding: 9px 12px;
+  font-size: 15px;
+}
+
+.controls input[type="search"] { width: 100%; margin-bottom: 10px; }
+
+.control-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+
+.control-row label { color: #94a3b8; font-size: 14px; }
+
+#cat-row { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+
+#cat-row button {
+  background: #0f172a;
+  color: #cbd5e1;
+  border: 1px solid #475569;
+  border-radius: 999px;
+  padding: 6px 13px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+#cat-row button.active {
+  background: #f59e0b;
+  border-color: #f59e0b;
+  color: #111827;
+  font-weight: 700;
+}
+
+#clear-filters {
+  background: transparent;
+  color: #fbbf24;
+  border: 1px solid #f59e0b;
+  border-radius: 8px;
+  padding: 8px 12px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+#stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 22px;
+  margin: 12px 2px;
+  color: #94a3b8;
+  font-size: 14px;
+}
+
+#stats strong { color: #fde68a; }
+
+#count-line { color: #cbd5e1; font-size: 15px; margin: 4px 2px 14px; }
+
+#grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 14px;
+}
+
+.card {
+  background: #1e293b;
+  border: 1px solid #334155;
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-link { text-decoration: none; color: inherit; display: flex; gap: 12px; padding: 14px; flex: 1; }
+
+.tile {
+  flex: 0 0 56px;
+  width: 56px;
+  height: 56px;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 28px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tile.big { flex-basis: 72px; width: 72px; height: 72px; font-size: 36px; }
+
+.card-body { min-width: 0; flex: 1; }
+
+.card-top { display: flex; gap: 8px; font-size: 12px; margin-bottom: 4px; }
+
+.cat { color: #7dd3fc; text-transform: uppercase; letter-spacing: 0.4px; font-weight: 700; }
+
+.store { color: #fbbf24; font-weight: 700; }
+
+.card h3 { margin: 0 0 4px; font-size: 17px; line-height: 1.3; color: #fff; }
+
+.blurb { margin: 0 0 10px; color: #94a3b8; font-size: 14px; }
+
+.prices { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; }
+
+.sale { font-size: 26px; font-weight: 800; color: #4ade80; }
+
+.sale.big { font-size: 34px; }
+
+.was { color: #94a3b8; text-decoration: line-through; font-size: 16px; }
+
+.pct {
+  background: #dc2626;
+  color: #fff;
+  font-weight: 800;
+  font-size: 14px;
+  padding: 2px 8px;
+  border-radius: 6px;
+}
+
+.card-meta { display: flex; align-items: center; gap: 10px; margin-top: 8px; flex-wrap: wrap; }
+
+.verdict {
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.4px;
+  padding: 3px 8px;
+  border-radius: 6px;
+}
+
+.verdict-new-low { background: #f59e0b; color: #111827; }
+.verdict-strong { background: #16a34a; color: #fff; }
+.verdict-good { background: #0369a1; color: #fff; }
+.verdict-routine { background: #475569; color: #e2e8f0; }
+
+.save { color: #4ade80; font-weight: 700; font-size: 14px; }
+
+.checked { color: #64748b; font-size: 12px; margin: 8px 0 0; }
+
+.buy {
+  display: block;
+  text-align: center;
+  background: #f59e0b;
+  color: #111827;
+  font-weight: 800;
+  text-decoration: none;
+  padding: 11px;
+  font-size: 15px;
+}
+
+.buy:hover { background: #fbbf24; }
+
+.buy.big { display: inline-block; border-radius: 8px; padding: 12px 22px; }
+
+.empty { color: #94a3b8; font-size: 16px; padding: 30px 10px; text-align: center; }
+
+.detail {
+  background: #1e293b;
+  border: 1px solid #334155;
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.detail .back { margin: 0 0 14px; }
+
+.detail-head { display: flex; gap: 14px; align-items: flex-start; }
+
+.detail h2 { margin: 0 0 6px; color: #fff; font-size: 24px; }
+
+.detail-prices {
+  display: flex;
+  gap: 28px;
+  flex-wrap: wrap;
+  margin: 18px 0;
+  padding: 14px;
+  background: #0f172a;
+  border-radius: 10px;
+}
+
+.detail-prices .label { display: block; color: #94a3b8; font-size: 13px; }
+
+.detail-prices .save.big { color: #4ade80; }
+
+.verdict-box {
+  border: 1px solid #f59e0b;
+  border-radius: 10px;
+  padding: 12px 14px;
+  margin: 0 0 14px;
+}
+
+.verdict-box p { margin: 8px 0 0; color: #cbd5e1; }
+
+.compare { margin: 6px 0 0; padding-left: 18px; }
+
+.compare li { margin: 6px 0; color: #cbd5e1; }
+
+.how, footer {
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.how {
+  background: #1e293b;
+  border: 1px solid #334155;
+  border-radius: 12px;
+  padding: 18px 20px;
+  margin-bottom: 20px;
+}
+
+.how h2 { margin: 0 0 8px; color: #fff; font-size: 20px; }
+
+.how p, .how li { color: #cbd5e1; font-size: 15px; }
+
+footer { color: #64748b; font-size: 13px; padding-bottom: 30px; }
+
+@media (max-width: 640px) {
+  header h1 { font-size: 30px; }
+  #grid { grid-template-columns: 1fr; }
+  .detail-head { flex-direction: column; }
+  .sale { font-size: 23px; }
+}

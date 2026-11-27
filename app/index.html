@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DealHound: Real Black Friday Deals, Checked 27 Nov 2026</title>
+<meta name="description" content="31 real Black Friday and Cyber Monday deals, each with its store, sale price, usual price, discount and check time. Search and filter by category, store and discount.">
+<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<header>
+  <h1>Deal<span>Hound</span></h1>
+  <p>Real Black Friday and Cyber Monday deals, checked by hand. No inflated was-prices, no filler.</p>
+  <span class="checked-line">All 31 prices checked 27 Nov 2026</span>
+</header>
+
+<main>
+  <div class="controls">
+    <input type="search" id="search" placeholder="Search deals, e.g. AirPods, Dyson, OLED..." aria-label="Search deals">
+    <div class="control-row">
+      <label for="store">Store</label>
+      <select id="store"><option value="All">All stores</option></select>
+      <label for="min-discount">Min. discount</label>
+      <select id="min-discount">
+        <option value="0">Any discount</option>
+        <option value="20">20% off or more</option>
+        <option value="40">40% off or more</option>
+        <option value="50">50% off or more</option>
+      </select>
+      <label for="sort">Sort</label>
+      <select id="sort"></select>
+      <button type="button" id="clear-filters">Clear filters</button>
+    </div>
+    <div id="cat-row" role="group" aria-label="Category"></div>
+  </div>
+
+  <div id="stats" aria-live="polite"></div>
+  <p id="count-line"></p>
+  <div id="grid"></div>
+  <div id="detail"></div>
+</main>
+
+<section class="how">
+  <h2>How we check a deal</h2>
+  <p>Every price on this page was read on 27 Nov 2026 from a deals roundup that names the store, and each card says which roundup it came from. The verdict on each deal is our honest call:</p>
+  <ul>
+    <li><strong>NEW LOW:</strong> the lowest price recorded for that product in 2026.</li>
+    <li><strong>STRONG DEAL:</strong> a deep cut on a current product, well below its usual price.</li>
+    <li><strong>GOOD DEAL:</strong> a real saving, though not the deepest cut of the sale.</li>
+    <li><strong>ROUTINE SALE:</strong> a modest cut. Fine if you already planned to buy it, not a reason to buy it.</li>
+  </ul>
+  <p>Store links open the store's own search for the exact product. Prices move by the hour during Black Friday week, so always check the live price before you pay.</p>
+</section>
+
+<footer>
+  <p>DealHound is an independent deal finder built for the make.fun Black Friday bounty. Prices were checked 27 Nov 2026 from the deals roundups named on each card. This site takes no commission and shows no ads.</p>
+</footer>
+
+<script type="module" src="./main.js"></script>
+</body>
+</html>
